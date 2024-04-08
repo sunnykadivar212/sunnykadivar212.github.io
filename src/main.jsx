@@ -3,32 +3,27 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import {
   createBrowserRouter,
+  createRoutesFromElements,
+  Route,
   RouterProvider,
 } from "react-router-dom";
 import About from './components/about/About'
 import Resume from './components/resume/Resume'
 import Projects from './components/projects/Projects'
 import Github from './components/github/Github'
+import Root from './components/Root'
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <About />,
-  },
-  {
-    path: "/resume",
-    element: <Resume />,
-  },
-  {
-    path: "/projects",
-    element: <Projects />,
-  },
-  {
-    path: "/github",
-    element: <Github />,
-  },
-
-]);
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Root />}>
+      <Route path="" element={<About />} />
+      <Route path="resume" element={<Resume />} />
+      <Route path="projects" element={<Projects />} />
+      <Route path="github" element={<Github />} />
+      
+    </Route>
+  )
+)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
