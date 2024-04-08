@@ -1,8 +1,5 @@
 {
-    "routes": [
-      { "src": "/", "dest": "/" },
-      { "src": "/resume", "dest": "/resume" },
-      { "src": "/github", "dest": "/github" }
-      
-    ]
-  }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
