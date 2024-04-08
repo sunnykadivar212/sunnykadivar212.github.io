@@ -26,10 +26,16 @@ function Header() {
           >
             Projects
           </Link>
+          <Link
+            to="/github/"
+            className="text-sm py-1 border-b-2 hover:border-blue-600 border-b-transparent"
+          >
+            Github
+          </Link>
         </div>
         <div className="flex flex-col gap-6 print:mt-10 print:gap-2">
           <h1 className="text-3xl md:text-6xl font-black">
-            Pouya <span className="font-extralight">Saadeghi</span>
+            Ashish <span className="font-extralight">Vaghela</span>
           </h1>
           <h2 className="md:text-xl">Full Stack Developer</h2>
         </div>
