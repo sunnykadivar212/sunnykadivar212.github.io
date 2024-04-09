@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 function Header() {
   const location = useLocation();
@@ -8,30 +8,46 @@ function Header() {
     <div className="mb-24 mt-6 flex flex-col items-center justify-center px-6">
       <div className="flex w-full max-w-4xl flex-col gap-36 print:gap-10">
         <div className="flex gap-10 print:hidden">
-          <Link
+          <NavLink
             to="/"
-            className="text-sm py-1 border-b-2 hover:border-blue-600 border-b-transparent"
+            className={({ isActive }) =>
+                    `block py-2 pr-4 pl-3 duration-200 ${
+                      isActive ? "border-blue-600" : "border-b-transparent"
+                    } text-sm py-1 border-b-2`
+                  }
           >
             About
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/resume/"
-            className="text-sm py-1 border-b-2 hover:border-blue-600 border-b-transparent"
+            className={({ isActive }) =>
+                    `block py-2 pr-4 pl-3 duration-200 ${
+                      isActive ? "border-blue-600" : "border-b-transparent"
+                    } text-sm py-1 border-b-2`
+                  }
           >
             Resume
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/projects/"
-            className="text-sm py-1 border-b-2 hover:border-blue-600 border-b-transparent"
+            className={({ isActive }) =>
+                    `block py-2 pr-4 pl-3 duration-200 ${
+                      isActive ? "border-blue-600" : "border-b-transparent"
+                    } text-sm py-1 border-b-2`
+                  }
           >
             Projects
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/github/"
-            className="text-sm py-1 border-b-2 hover:border-blue-600 border-b-transparent"
+            className={({ isActive }) =>
+                    `block py-2 pr-4 pl-3 duration-200 ${
+                      isActive ? "border-blue-600" : "border-b-transparent"
+                    } text-sm py-1 border-b-2`
+                  }
           >
             Github
-          </Link>
+          </NavLink>
         </div>
         <div className="flex flex-col gap-6 print:mt-10 print:gap-2">
           <h1 className="text-3xl md:text-6xl font-black">
