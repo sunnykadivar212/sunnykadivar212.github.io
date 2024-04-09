@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from "react";
+import data from '../../assets/data.json';
+
+
+
+const githubUserName = data.githubUserName;
+const xUserName = data.XUserName;
 
 function Github() {
   const [data, setData] = useState(null);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://api.github.com/users/ashish-codejourney"
+          `https://api.github.com/users/${githubUserName}`
         );
         if (response.ok) {
           const result = await response.json();
@@ -52,7 +57,7 @@ function Github() {
       <div className="text-center mt-4">
         <p className="flex justify-center">
           <img
-            src="https://komarev.com/ghpvc/?username=ashish-codejourney&label=Profile%20views&color=0e75b6&style=flat"
+            src={`https://komarev.com/ghpvc/?username=${githubUserName}&label=Profile%20views&color=0e75b6&style=flat`}
             alt="Profile Views"
           />
         </p>
@@ -64,7 +69,7 @@ function Github() {
           className="flex justify-center"
         >
           <img
-            src="https://github-profile-trophy.vercel.app/?username=ashish-codejourney"
+            src={`https://github-profile-trophy.vercel.app/?username=${githubUserName}`}
             alt="GitHub Trophies"
           />
         </a>
@@ -72,13 +77,13 @@ function Github() {
 
       <div className="text-center mt-4 flex justify-center">
         <a
-          href="https://twitter.com/CLI_Craftsman"
+          href={`https://twitter.com/${xUserName}`}
           target="_blank"
           rel="noopener noreferrer"
         >
           <img
-            src="https://img.shields.io/twitter/follow/CLI_Craftsman?logo=twitter&style=for-the-badge"
-            alt="Twitter Followers"
+            src={`https://img.shields.io/twitter/follow/${xUserName}?logo=twitter&style=for-the-badge`}
+            alt="X Followers"
           />
         </a>
       </div>
@@ -88,14 +93,14 @@ function Github() {
           <div>
             <p className="text-center text-lg font-bold">Top Languages</p>
             <img
-              src={`https://github-readme-stats.vercel.app/api/top-langs?username=${data.login}&show_icons=true&locale=en&layout=compact`}
+              src={`https://github-readme-stats.vercel.app/api/top-langs?username=${githubUserName}&show_icons=true&locale=en&layout=compact`}
               alt={`${data.login}'s Top Languages`}
             />
           </div>
           <div>
             <p className="text-center text-lg font-bold">GitHub Stats</p>
             <img
-              src={`https://github-readme-stats.vercel.app/api?username=${data.login}&show_icons=true&locale=en`}
+              src={`https://github-readme-stats.vercel.app/api?username=${githubUserName}&show_icons=true&locale=en`}
               alt={`${data.login}'s GitHub Stats`}
             />
           </div>
