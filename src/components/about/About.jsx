@@ -19,6 +19,18 @@ function About() {
             >
               <strong>BidClips</strong>
             </a>
+            {" "}
+            <span className="[&_a]:underline">
+                  at{" "}
+                  <a
+                    href="https://greylabs.com/"
+                    target="_blank"
+                    rel="noreferrer nofollow"
+                  >
+                    <strong>Greycell labs</strong>
+                  </a>{" "}
+                  (Ahmedabad, India){" "}
+                </span>
             .
           </span>
           <br />
