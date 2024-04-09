@@ -22,7 +22,7 @@ function Resume() {
             </div>
             <div className="grid items-baseline gap-x-10 print:grid-cols-4 lg:grid-cols-4">
               <div className="print:text-right lg:text-right">
-                <span className="text-black/60">Jan 2024 – Present </span>
+                <span className="text-black/60">{data.workingInCurrentCompanySince} </span>
               </div>
               <div className="print:col-span-3 lg:col-span-3">
                 <h2 className="inline font-bold">
@@ -41,7 +41,7 @@ function Resume() {
                 </span>
               </div>{" "}
               <div className="print:text-right lg:text-right">
-                <span className="text-sm text-black/60">Full-time </span>
+                <span className="text-sm text-black/60">{data.workingShift}</span>
               </div>
               <div className="print:col-span-3 lg:col-span-3">
                 <p>
@@ -57,10 +57,7 @@ function Resume() {
                     >
                       {data.workingOn}
                     </a>
-                    : BidClips is a software platform designed for home service
-                    businesses. It helps streamline tasks like lead management,
-                    creating estimates, communicating with customers, scheduling
-                    jobs, and processing online payments, all in one place.{" "}
+                    : {data.workingProjectDescription}.{" "}
                   </li>
                 </ul>
               </div>
@@ -130,9 +127,9 @@ function Resume() {
             <div className="grid items-baseline gap-x-10 print:grid-cols-4 lg:grid-cols-4">
               <div className="print:col-span-3 print:col-start-2 lg:col-span-3 lg:col-start-2">
                 <ul className="mx-5 my-2 flex list-disc flex-col gap-1 text-sm">
-                  <li>HTML5, CSS, JavaScript, Java, Python</li>
-                  <li>JavaScript libraries including React, Redux</li>
-                  <li>Git, GitHub</li>
+                  <li>{data.knownSkills}</li>
+                  <li>{data.knownLibrariesAndFrameWorks}</li>
+                  <li>{data.knownTools}</li>
                   <li>
                     Currently I am improving my skills by building some projects
                   </li>
@@ -167,11 +164,11 @@ function Resume() {
                   <li className="[&_a]:underline">
                     Linkedin:{" "}
                     <a
-                      href="https://linkedin.com/in/ashish-codejourney/"
+                      href={`https://linkedin.com/in/ashish-codejourney/`}
                       target="_blank"
                       rel="noreferrer nofollow"
                     >
-                      linkedin.com/in/ashish-codejourney
+                      @{data.linkedinUserName}
                     </a>{" "}
                   </li>
                   <li className="[&_a]:underline">
