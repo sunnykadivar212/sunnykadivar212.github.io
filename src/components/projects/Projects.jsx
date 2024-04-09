@@ -9,7 +9,7 @@ function Projects() {
       className="flex flex-col bg-slate-50 items-center gap-4 rounded-2xl py-20 text-slate-700 transition-all duration-700 hover:bg-slate-200"
     >
       <img
-        src="/src/assets/projects/kmaster.jpg"
+        src="../public/projects/kmaster.jpg"
         alt="daisyUI"
         width={350}
         height={350}
@@ -28,7 +28,7 @@ function Projects() {
       className="flex flex-col bg-slate-50 items-center gap-4 rounded-2xl py-20 text-slate-700 transition-all duration-700 hover:bg-slate-200"
     >
       <img
-        src="/src/assets/projects/cybertrace.jpg"
+        src="../public/projects/cybertrace.jpg"
         alt="project1"
         width={350}
         height={350}
@@ -47,8 +47,8 @@ function Projects() {
       className="flex flex-col bg-slate-50 items-center gap-4 rounded-2xl py-20 text-slate-700 transition-all duration-700 hover:bg-slate-200"
     >
       <img
-        src="/src/assets/projects/library.jpg"
-        alt="Atbox.io"
+        src="../public/projects/library.jpg"
+        alt="Library Management system"
         width={350}
         height={350}
         className="rounded-lg transition-all duration-300"
