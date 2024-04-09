@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import data from '../../assets/data.json';
 
 function Header() {
   const location = useLocation();
@@ -51,9 +52,9 @@ function Header() {
         </div>
         <div className="flex flex-col gap-6 print:mt-10 print:gap-2">
           <h1 className="text-3xl md:text-6xl font-black">
-            Ashish <span className="font-extralight">Vaghela</span>
+            {data.firstName} <span className="font-extralight">{data.lastName}</span>
           </h1>
-          <h2 className="md:text-xl">Full Stack Developer</h2>
+          <h2 className="md:text-xl">{data.proffession}</h2>
         </div>
       </div>
     </div>
