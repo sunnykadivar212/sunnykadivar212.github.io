@@ -1,4 +1,10 @@
 import React from "react";
+import data from '../../assets/data.json';
+
+
+const LinkedinUrl = data.linkedinUrl;
+const LinkedinUsername = data.linkedinUserName;
+
 
 function Resume() {
   return (
@@ -20,18 +26,18 @@ function Resume() {
               </div>
               <div className="print:col-span-3 lg:col-span-3">
                 <h2 className="inline font-bold">
-                  Full Stack devekoper intern
+                  {data.currentPosition}
                 </h2>{" "}
                 <span className="[&_a]:underline">
                   at{" "}
                   <a
-                    href="https://greylabs.com/"
+                    href={data.companySite}
                     target="_blank"
                     rel="noreferrer nofollow"
                   >
-                    Greycell labs
+                    {data.company}
                   </a>{" "}
-                  (Ahmedabad, India){" "}
+                  ({data.companyLocation}){" "}
                 </span>
               </div>{" "}
               <div className="print:text-right lg:text-right">
@@ -45,11 +51,11 @@ function Resume() {
                 <ul className="mx-5 my-2 flex list-disc flex-col gap-1 text-sm">
                   <li className="[&_a]:underline">
                     <a
-                      href="https://www.bidclips.com/"
+                      href={data.workingProjectSite}
                       target="_blank"
                       rel="noreferrer nofollow"
                     >
-                      bidclips.com
+                      {data.workingOn}
                     </a>
                     : BidClips is a software platform designed for home service
                     businesses. It helps streamline tasks like lead management,
@@ -71,13 +77,13 @@ function Resume() {
             </div>
             <div className="grid items-baseline gap-x-10 print:grid-cols-4 lg:grid-cols-4">
               <div className="print:text-right lg:text-right">
-                <span className="text-black/60">Jan 2022 – Jan 2024 </span>
+                <span className="text-black/60">{data.mastersCollegeTime} </span>
               </div>
               <div className="print:col-span-3 lg:col-span-3">
                 <h2 className="inline font-bold">
-                  Master of Computer Applications
+                  {data.mastersDegree}
                 </h2>{" "}
-                <span>at Gujarat University </span>
+                <span>at {data.mastersUniversity} </span>
               </div>
               <div
                 className="print:text-right lg:text-right"
@@ -86,18 +92,18 @@ function Resume() {
                 <span className="text-sm text-black/60" />
               </div>
               <div className="print:col-span-3 lg:col-span-3">
-                <p>Ahmedabad, India</p>
+                <p>{data.mastersUniversityLocation}</p>
               </div>
             </div>
             <div className="grid items-baseline gap-x-10 print:grid-cols-4 lg:grid-cols-4">
               <div className="print:text-right lg:text-right">
-                <span className="text-black/60">Jan 2019 – Jan 2022 </span>
+                <span className="text-black/60">{data.bacheloursCollegeTime}</span>
               </div>
               <div className="print:col-span-3 lg:col-span-3">
                 <h2 className="inline font-bold">
-                  Bachelor of Computer Applications
+                  {data.bacheloursDegree}
                 </h2>{" "}
-                <span>at GLS University </span>
+                <span>at {data.bacheloursUniversity} </span>
               </div>
               <div
                 className="print:text-right lg:text-right"
@@ -106,7 +112,7 @@ function Resume() {
                 <span className="text-sm text-black/60" />
               </div>
               <div className="print:col-span-3 lg:col-span-3">
-                <p>Ahmedabad, India</p>
+                <p>{data.bacheloursUniversityLocation}</p>
               </div>
             </div>
           </div>
@@ -151,11 +157,11 @@ function Resume() {
                   <li className="[&_a]:underline">
                     Email:{" "}
                     <a
-                      href="mailto:vaghelaashish111@gmail.com"
+                      href={data.mailto}
                       target="_blank"
                       rel="noreferrer nofollow"
                     >
-                      vaghelaashish111@gmail.com
+                      {data.email}
                     </a>{" "}
                   </li>
                   <li className="[&_a]:underline">
@@ -175,7 +181,7 @@ function Resume() {
                       target="_blank"
                       rel="noreferrer nofollow"
                     >
-                      github.com/Ashish-CodeJourney
+                      @{data.githubUserName}
                     </a>{" "}
                   </li>
                   <li className="[&_a]:underline">
@@ -185,7 +191,7 @@ function Resume() {
                       target="_blank"
                       rel="noreferrer nofollow"
                     >
-                      @CLI_Craftsman
+                      @{data.XUserName}
                     </a>{" "}
                   </li>
                   <li className="[&_a]:underline">
@@ -195,11 +201,11 @@ function Resume() {
                       target="_blank"
                       rel="noreferrer nofollow"
                     >
-                      @heyyy_ashish
+                      @{data.telegramUserName}
                     </a>{" "}
                   </li>
                   <li className="[&_a]:underline">
-                    Location: Ahmedabad, India (open to relocation){" "}
+                    Location: {data.city} (open to relocation){" "}
                   </li>
                 </ul>
               </div>
