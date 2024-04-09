@@ -20,3 +20,5 @@ See it online: https://www.ashishcodejourney.tech/
 npm install
 npm run dev
 ```
+
+Edit ```data.json``` file on `src/assets/data.json` and put your own data
