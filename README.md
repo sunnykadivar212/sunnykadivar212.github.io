@@ -1,5 +1,7 @@
 # Ashish-CodeJourney's website
 
+![Vercel Deploy](https://deploy-badge.vercel.app/vercel/ashish-code-journey-github-io?style=plastic&logo=success)
+
 This is a simple React Application created using Vite.
 
 ## Demo
