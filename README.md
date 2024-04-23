@@ -19,7 +19,15 @@ See it online: https://www.ashishcodejourney.tech/
 ## How to use
 
 ```
+git clone https://github.com/Ashish-CodeJourney/Ashish-CodeJourney.github.io.git
+```
+```
+cd Ashish-CodeJourney.github.io
+```
+```
 npm install
+```
+```
 npm run dev
 ```
 
