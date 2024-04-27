@@ -179,7 +179,7 @@ function Resume() {
                   <li className="[&_a]:underline">
                     X:{" "}
                     <a
-                      href={data.xUrl}
+                      href={data.XUrl}
                       target="_blank"
                       rel="noreferrer nofollow"
                     >
