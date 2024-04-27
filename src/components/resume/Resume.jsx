@@ -164,7 +164,7 @@ function Resume() {
                   <li className="[&_a]:underline">
                     Linkedin:{" "}
                     <a
-                      href={`https://linkedin.com/in/ashish-codejourney/`}
+                      href={data.linkedinUrl}
                       target="_blank"
                       rel="noreferrer nofollow"
                     >
@@ -184,7 +184,7 @@ function Resume() {
                   <li className="[&_a]:underline">
                     Twitter:{" "}
                     <a
-                      href="https://twitter.com/CLI_Craftsman"
+                      href={data.xUrl}
                       target="_blank"
                       rel="noreferrer nofollow"
                     >
@@ -194,7 +194,7 @@ function Resume() {
                   <li className="[&_a]:underline">
                     Telegram:{" "}
                     <a
-                      href="https://t.me/heyyy_ashish"
+                      href={data.telegramUrl}
                       target="_blank"
                       rel="noreferrer nofollow"
                     >
