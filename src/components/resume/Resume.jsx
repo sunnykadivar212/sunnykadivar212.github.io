@@ -1,11 +1,6 @@
 import React from "react";
 import data from '../../assets/data.json';
 
-
-const LinkedinUrl = data.linkedinUrl;
-const LinkedinUsername = data.linkedinUserName;
-
-
 function Resume() {
   return (
     <div className="mb-24 mt-6 flex flex-col items-center justify-center px-6">
@@ -182,7 +177,7 @@ function Resume() {
                     </a>{" "}
                   </li>
                   <li className="[&_a]:underline">
-                    Twitter:{" "}
+                    X:{" "}
                     <a
                       href={data.xUrl}
                       target="_blank"
