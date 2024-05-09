@@ -105,6 +105,23 @@ function Github() {
             />
           </div>
         </div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <picture>
+        <source
+          media="(prefers-color-scheme: dark)"
+          srcSet="https://raw.githubusercontent.com/Sutil/Sutil/2b2fad3bf54522bb30c8c170591fc68ff51b69e6/github-contribution-grid-snake2.svg"
+        />
+        <source
+          media="(prefers-color-scheme: light)"
+          srcSet="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake.svg"
+        />
+        <img
+          alt="github contribution grid snake animation"
+          src="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake.svg"
+          style={{ width: '100%', height: '100%', /* add any other styles here */ }}
+        />
+      </picture>
+    </div>
       </div>
     </div>
   );
