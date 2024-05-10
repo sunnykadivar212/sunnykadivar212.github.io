@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { Analytics } from "@vercel/analytics/react"
 import './index.css'
 import {
   createBrowserRouter,
@@ -21,7 +20,7 @@ const router = createBrowserRouter(
       <Route path="resume" element={<Resume />} />
       <Route path="projects" element={<Projects />} />
       <Route path="github" element={<Github />} />
-      <Analytics />
+      
     </Route>
   )
 )
@@ -29,6 +28,5 @@ const router = createBrowserRouter(
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-
   </React.StrictMode>,
 )
