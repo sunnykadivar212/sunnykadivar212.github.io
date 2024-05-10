@@ -21,7 +21,7 @@ const router = createBrowserRouter(
       <Route path="resume" element={<Resume />} />
       <Route path="projects" element={<Projects />} />
       <Route path="github" element={<Github />} />
-      
+      <Analytics />
     </Route>
   )
 )
@@ -29,5 +29,6 @@ const router = createBrowserRouter(
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router} />
+
   </React.StrictMode>,
 )
