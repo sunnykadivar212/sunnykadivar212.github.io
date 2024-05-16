@@ -33,5 +33,10 @@
     "mastersUniversityLocation": "Ahmedabad, India",
     "knownSkills": "HTML5, CSS, JavaScript, Java, Python",
     "knownLibrariesAndFrameWorks": "JavaScript libraries including React, Redux",
-    "knownTools": "Git, GitHub"
+    "knownTools": "Git, GitHub",
+    "project1Name": "Stalk Talk",
+    "project1Description": "A real time chat application made using React JS, Express JS, Socket-IO, CORS and some other technologies.",
+    "project1ImageUrl": "#",
+    "project1Url": "https://stalktalk.ashishcodejourney.tech/"
+    
   }
