@@ -36,7 +36,7 @@
     "knownTools": "Git, GitHub",
     "project1Name": "Stalk Talk",
     "project1Description": "A real time chat application made using React JS, Express JS, Socket-IO, CORS and some other technologies.",
-    "project1ImageUrl": "#",
-    "project1Url": "https://stalktalk.ashishcodejourney.tech/"
-    
+    "project1ImageUrl": "https://raw.githubusercontent.com/Ashish-CodeJourney/Ashish-CodeJourney.github.io/master/src/assets/project1.png",
+    "project1GithubUrl": "https://github.com/Ashish-CodeJourney/Stalk-Talk.git",
+    "project1LiveUrl": "https://stalktalk.ashishcodejourney.tech/"
   }
