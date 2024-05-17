@@ -14,7 +14,7 @@ See it online: https://www.ashishcodejourney.tech/
 - Minimal
 - Fast
 - Responsive
-- Printer friendly
+- Dark - Light mode
 - ATS friendly
 
 ## How to use
