@@ -1,5 +1,4 @@
-import React from "react";
-import data from '../../assets/data.json';
+import data from "../../assets/data.json";
 
 function Resume() {
   return (
@@ -17,12 +16,12 @@ function Resume() {
             </div>
             <div className="grid items-baseline gap-x-10 print:grid-cols-4 lg:grid-cols-4">
               <div className="print:text-right lg:text-right">
-                <span className="text-black/60">{data.workingInCurrentCompanySince} </span>
+                <span className="inline">
+                  {data.workingInCurrentCompanySince}{" "}
+                </span>
               </div>
               <div className="print:col-span-3 lg:col-span-3">
-                <h2 className="inline font-bold">
-                  {data.currentPosition}
-                </h2>{" "}
+                <h2 className="inline font-bold">{data.currentPosition}</h2>{" "}
                 <span className="[&_a]:underline">
                   at{" "}
                   <a
@@ -36,7 +35,7 @@ function Resume() {
                 </span>
               </div>{" "}
               <div className="print:text-right lg:text-right">
-                <span className="text-sm text-black/60">{data.workingShift}</span>
+                <span className="inline">{data.workingShift}</span>
               </div>
               <div className="print:col-span-3 lg:col-span-3">
                 <p>
@@ -69,19 +68,17 @@ function Resume() {
             </div>
             <div className="grid items-baseline gap-x-10 print:grid-cols-4 lg:grid-cols-4">
               <div className="print:text-right lg:text-right">
-                <span className="text-black/60">{data.mastersCollegeTime} </span>
+                <span className="inline">{data.mastersCollegeTime} </span>
               </div>
               <div className="print:col-span-3 lg:col-span-3">
-                <h2 className="inline font-bold">
-                  {data.mastersDegree}
-                </h2>{" "}
+                <h2 className="inline font-bold">{data.mastersDegree}</h2>{" "}
                 <span>at {data.mastersUniversity} </span>
               </div>
               <div
                 className="print:text-right lg:text-right"
                 data-svelte-h="svelte-yw87rh"
               >
-                <span className="text-sm text-black/60" />
+                <span className="inline" />
               </div>
               <div className="print:col-span-3 lg:col-span-3">
                 <p>{data.mastersUniversityLocation}</p>
@@ -89,19 +86,17 @@ function Resume() {
             </div>
             <div className="grid items-baseline gap-x-10 print:grid-cols-4 lg:grid-cols-4">
               <div className="print:text-right lg:text-right">
-                <span className="text-black/60">{data.bacheloursCollegeTime}</span>
+                <span className="inline">{data.bacheloursCollegeTime}</span>
               </div>
               <div className="print:col-span-3 lg:col-span-3">
-                <h2 className="inline font-bold">
-                  {data.bacheloursDegree}
-                </h2>{" "}
+                <h2 className="inline font-bold">{data.bacheloursDegree}</h2>{" "}
                 <span>at {data.bacheloursUniversity} </span>
               </div>
               <div
                 className="print:text-right lg:text-right"
                 data-svelte-h="svelte-yw87rh"
               >
-                <span className="text-sm text-black/60" />
+                <span className="inline" />
               </div>
               <div className="print:col-span-3 lg:col-span-3">
                 <p>{data.bacheloursUniversityLocation}</p>
