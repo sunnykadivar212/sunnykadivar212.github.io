@@ -12,6 +12,7 @@ import Resume from './components/resume/Resume'
 import Projects from './components/projects/Projects'
 import Github from './components/github/Github'
 import Root from './components/Root'
+import { Analytics } from "@vercel/analytics/react"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,5 +29,6 @@ const router = createBrowserRouter(
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router} />
+    <Analytics />
   </React.StrictMode>,
 )
