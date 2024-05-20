@@ -115,11 +115,16 @@ function Github() {
           media="(prefers-color-scheme: light)"
           srcSet="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake.svg"
         />
-        <img
-          alt="github contribution grid snake animation"
-          src="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake.svg"
-          style={{ width: '100%', height: '100%', /* add any other styles here */ }}
-        />
+
+        <div className="text-center mt-4">
+        <p className="flex justify-center">
+          <img
+            src={`https://github-readme-activity-graph.vercel.app/graph?username=${githubUserName}&theme=react-dark&hide_border=true`}
+            alt="Ashish-CodeJourney's Contribution Chart"
+          />
+        </p>
+      </div>
+        
       </picture>
     </div>
       </div>
