@@ -1,7 +1,7 @@
 # Ashish-CodeJourney's website
 
 [![pages-build-deployment](https://github.com/Ashish-CodeJourney/Ashish-CodeJourney.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/Ashish-CodeJourney/Ashish-CodeJourney.github.io/actions/workflows/pages/pages-build-deployment)
-![Vercel Deploy](https://deploy-badge.vercel.app/vercel/ashish-code-journey-github-io?style=plastic&logo=success)
+![Vercel Deploy](https://deploy-badge.vercel.app/vercel/ashishcodejourney)
 
 This is a simple React Application created using Vite.
 
