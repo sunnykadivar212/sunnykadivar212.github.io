@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import data from '../../assets/data.json';
 
-
-
 const githubUserName = data.githubUserName;
 const xUserName = data.XUserName;
 
@@ -38,6 +36,8 @@ function Github() {
 
   return (
     <div className="container mx-auto p-4">
+      <h1 className="text-center text-3xl font-bold mb-4">Hi 👋, I'm Ashish</h1>
+      <h3 className="text-center text-xl mb-4">A Techie 🤓 Software developer from India 🇮🇳</h3>
 
       <div className="flex items-center justify-center">
         <img
@@ -54,6 +54,18 @@ function Github() {
         <p className="text-center mt-2">{data.bio}</p>
       </div>
 
+      <div className="mt-4 text-left max-w-md mx-auto">
+        <p>💬 Ask me about <strong>Linux, React, Python and Java</strong></p>
+        <p>📫 Reach me at <strong>vaghelaashish111@gmail.com</strong></p>
+        <p>👨‍💻 All of my projects are available at <a href="https://ashishcodejourney.vercel.app" target="_blank" rel="noopener noreferrer">Ashish-CodeJourney</a></p>
+        <p>⚡ <strong>Chai is way better than Coffee | Change my mind!</strong></p>
+        <p>🌐 <a href="https://github.com/mdn/content/pulls?q=is%3Apr+is%3Amerged+author%3AAshish-CodeJourney" target="_blank" rel="noopener noreferrer">Some contributions in MDN web docs</a></p>
+      </div>
+
+      <div className="mt-4 flex justify-center">
+        <img src="https://raw.githubusercontent.com/Ashish-CodeJourney/Ashish-CodeJourney/master/assets/terminal.svg" alt="Terminal Command" />
+      </div>
+
       <div className="text-center mt-4">
         <p className="flex justify-center">
           <img
@@ -64,32 +76,29 @@ function Github() {
       </div>
 
       <div className="text-center mt-4">
-        <a
-          href="https://github.com/ryo-ma/github-profile-trophy"
-          className="flex justify-center"
-        >
-          <img
-            src={`https://github-profile-trophy.vercel.app/?username=${githubUserName}`}
-            alt="GitHub Trophies"
-          />
-        </a>
-      </div>
-
-      <div className="text-center mt-4 flex justify-center">
-        <a
-          href={`https://twitter.com/${xUserName}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src={`https://img.shields.io/twitter/follow/${xUserName}?logo=twitter&style=for-the-badge`}
-            alt="X Followers"
-          />
-        </a>
+        <h3 className="text-xl font-bold mb-2">Connect with me:</h3>
+        <div className="flex justify-center space-x-4">
+          <a href="https://twitter.com/codejourney_" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/twitter.svg" alt="Twitter" height="30" width="40" />
+          </a>
+          <a href="https://linkedin.com/in/ashish-codejourney" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg" alt="LinkedIn" height="30" width="40" />
+          </a>
+          <a href="https://instagram.com/heyyy_ashish" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/instagram.svg" alt="Instagram" height="30" width="40" />
+          </a>
+        </div>
       </div>
 
       <div className="mt-8">
-        <div className="grid grid-cols-2 gap-4 mx-auto max-w-2xl">
+        <h3 className="text-xl font-bold mb-2 text-center">Languages and Tools:</h3>
+        <div className="flex flex-wrap justify-center gap-4">
+          {/* Add your language and tool icons here */}
+        </div>
+      </div>
+
+      <div className="mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mx-auto max-w-2xl">
           <div>
             <p className="text-center text-lg font-bold">Top Languages</p>
             <img
@@ -105,28 +114,25 @@ function Github() {
             />
           </div>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-      <picture>
-        <source
-          media="(prefers-color-scheme: dark)"
-          srcSet="https://raw.githubusercontent.com/Sutil/Sutil/2b2fad3bf54522bb30c8c170591fc68ff51b69e6/github-contribution-grid-snake2.svg"
-        />
-        <source
-          media="(prefers-color-scheme: light)"
-          srcSet="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake.svg"
-        />
-
-        <div className="text-center mt-4">
-        <p className="flex justify-center">
-          <img
-            src={`https://github-readme-activity-graph.vercel.app/graph?username=${githubUserName}&theme=react-dark&hide_border=true`}
-            alt="Ashish-CodeJourney's Contribution Chart"
-          />
-        </p>
       </div>
-        
-      </picture>
-    </div>
+
+      <div className="mt-8">
+        <h3 className="text-xl font-bold mb-2 text-center">Certifications:</h3>
+        <div className="flex justify-center space-x-4">
+          <a href="https://www.credly.com/badges/c203200e-ba86-49c2-801a-65b503dcb69d/public_url" target="_blank" rel="noopener noreferrer">
+            <img src="https://images.credly.com/size/340x340/images/73e4a58b-a8ef-41a3-a7db-9183dd269882/image.png" alt="Certification 1" width="150" height="150" />
+          </a>
+          <a href="https://ti-user-certificates.s3.amazonaws.com/ae62dcd7-abdc-4e90-a570-83eccba49043/5819416a-0b3c-4e22-8dfb-220ccdf644ac-ashish-vaghela-9cf8fc50-58af-4735-9058-32bfdd9097b3-certificate.pdf" target="_blank" rel="noopener noreferrer">
+            <img src="https://images.credly.com/images/6096167c-91fd-4e74-bc85-d2100672fef7/image.png" alt="Certification 2" width="150" height="150" />
+          </a>
+        </div>
+      </div>
+
+      <div className="text-center mt-8">
+        <img
+          src={`https://github-readme-activity-graph.vercel.app/graph?username=${githubUserName}&theme=react-dark&hide_border=true`}
+          alt="Ashish-CodeJourney's Contribution Chart"
+        />
       </div>
     </div>
   );
