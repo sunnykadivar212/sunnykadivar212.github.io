@@ -21,7 +21,7 @@ function About() {
               <strong>{data.workingOn}</strong>
             </a>
             {" "}
-            <span className="[&_a]:underline">
+            {/* <span className="[&_a]:underline">
                   at{" "}
                   <a
                     href={data.companySite}
@@ -31,7 +31,7 @@ function About() {
                     <strong>{data.company}</strong>
                   </a>{" "}
                   ({data.companyLocation}){" "}
-                </span>
+                </span> */}
             .
           </span>
           <br />
