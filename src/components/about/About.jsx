@@ -18,10 +18,10 @@ function About() {
               rel="noreferrer nofollow"
               className="text-black-600 hover:underline"
             >
-              <strong>{data.workingOn}</strong>
+              Personal Projects
             </a>
             {" "}
-            <span className="[&_a]:underline">
+            {/* <span className="[&_a]:underline">
                   at{" "}
                   <a
                     href={data.companySite}
@@ -31,7 +31,7 @@ function About() {
                     <strong>{data.company}</strong>
                   </a>{" "}
                   ({data.companyLocation}){" "}
-                </span>
+                </span> */}
             .
           </span>
           <br />
