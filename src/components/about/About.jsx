@@ -18,7 +18,7 @@ function About() {
               rel="noreferrer nofollow"
               className="text-black-600 hover:underline"
             >
-              <strong>{data.workingOn}</strong>
+              Personal Projects
             </a>
             {" "}
             {/* <span className="[&_a]:underline">
