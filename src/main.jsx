@@ -13,7 +13,6 @@ import Projects from './components/projects/Projects'
 import Github from './components/github/Github'
 import Root from './components/Root'
 import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
