@@ -7,7 +7,7 @@ function About() {
       <div className="flex w-full max-w-4xl flex-col gap-10 print:gap-6">
         <p className="text-left leading-8">
           <span className="text-lg">
-            I'm <strong>{data.firstName}</strong>, a freelance web developer living in {data.city}.
+            I'm <strong>{data.firstName}</strong>, a Freelance Full Stack Developer living in {data.city}.
           </span>
           <br />
           <span className="text-lg">
