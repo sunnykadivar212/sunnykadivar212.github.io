@@ -12,12 +12,33 @@ function Resume() {
                 <h2 className="text-2xl font-bold text-blue-600">Experience</h2>
               </div>
             </div>
+
+            {/* Current Job */}
             <div className="grid items-baseline gap-x-10 lg:grid-cols-4">
               <div className="lg:text-right">
-                <span>{data.workingInCurrentCompanySince}</span>
+                <span>Sep 2024 – Present</span>
               </div>
               <div className="lg:col-span-3">
-                <h2 className="inline font-bold">{data.currentPosition}</h2>{" "}
+                <h2 className="inline font-bold">Software Craftsperson</h2>{" "}
+                <span>
+                  at <a href="https://nelkinda.com">Nelkinda Software Craft</a> (Remote)
+                </span>
+              </div>
+              <div className="lg:text-right">
+                <span>Full-time</span>
+              </div>
+              <div className="lg:col-span-3">
+                <p>Actively involved in writing clean, maintainable code, following XP practices, TDD, and software craftsmanship principles.</p>
+              </div>
+            </div>
+
+            {/* Old Job */}
+            <div className="grid items-baseline gap-x-10 lg:grid-cols-4">
+              <div className="lg:text-right">
+                <span>{data.workingInCurrentCompanySince} </span>
+              </div>
+              <div className="lg:col-span-3">
+                <h2 className="inline font-bold">Full Stack Developer Intern</h2>{" "}
                 <span>
                   at <a href={data.companySite}>{data.company}</a> ({data.companyLocation})
                 </span>
@@ -26,7 +47,7 @@ function Resume() {
                 <span>{data.workingShift}</span>
               </div>
               <div className="lg:col-span-3">
-                <p>actively helping in feature and performance improvement projects such as:</p>
+                <p>Worked on various feature and performance improvement projects such as:</p>
                 <ul className="mx-5 my-2 list-disc">
                   <li>
                     <a href={data.workingProjectSite}>{data.workingOn}</a>: {data.workingProjectDescription}
@@ -121,7 +142,7 @@ function Resume() {
                 <ul className="mx-5 my-2 list-disc">
                   <li>Email: <a href={data.mailto}>{data.email}</a></li>
                   <li>Linkedin: <a href={data.linkedinUrl}>@{data.linkedinUserName}</a></li>
-                  <li>Github: <a href="https://github.com/Ashish-CodeJourney">@{data.githubUserName}</a></li>
+                  <li>Github: <a href={data.githubUrl}>@{data.githubUserName}</a></li>
                   <li>X: <a href={data.XUrl}>@{data.XUserName}</a></li>
                   <li>Telegram: <a href={data.telegramUrl}>@{data.telegramUserName}</a></li>
                   <li>Location: {data.city} (open to relocation)</li>
