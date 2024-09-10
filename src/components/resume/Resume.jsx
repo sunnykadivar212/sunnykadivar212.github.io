@@ -123,7 +123,8 @@ function Resume() {
                   <li>Linkedin: <a href={data.linkedinUrl}>@{data.linkedinUserName}</a></li>
                   <li>Github: <a href="https://github.com/Ashish-CodeJourney">@{data.githubUserName}</a></li>
                   <li>X: <a href={data.XUrl}>@{data.XUserName}</a></li>
-                  <li>Telegram: <a href={data.telegramUrl}>@{data.telegramUserName}</a></li>
+                  <li>Dev.to: <a href={data.devToUrl}>@{data.XUserName}</a></li>
+                  <li>Telegram: <a href={data.telegramUrl}>@{data.devToUserName}</a></li>
                   <li>Location: {data.city} (open to relocation)</li>
                 </ul>
               </div>
