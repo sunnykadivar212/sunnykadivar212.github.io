@@ -67,6 +67,16 @@ function Header() {
                 Projects
               </NavLink>
               <NavLink
+                to="/certification/"
+                className={({ isActive }) =>
+                  `block py-2 pr-4 pl-3 duration-200 ${
+                    isActive ? "border-blue-600" : "border-b-transparent"
+                  } text-sm py-1 border-b-2`
+                }
+              >
+                Certificates
+              </NavLink>
+              <NavLink
                 to="/github/"
                 className={({ isActive }) =>
                   `block py-2 pr-4 pl-3 duration-200 ${
