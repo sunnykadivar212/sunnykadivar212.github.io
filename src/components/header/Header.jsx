@@ -1,11 +1,13 @@
+import React, { useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom";
 import data from "../../assets/data.json";
-import { useState, useEffect } from "react";
+import { Menu } from 'lucide-react';
 
 function Header() {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
@@ -21,51 +23,60 @@ function Header() {
     }
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <div className="mb-24 mt-6 flex flex-col items-center justify-center px-6">
-      <div className="flex w-full max-w-4xl flex-col gap-36 print:gap-10">
+    <div className="mb-24 mt-6 px-4 sm:px-6">
+      <div className="max-w-4xl mx-auto">
         <div className="flex items-center justify-between w-full print:hidden">
-          <div className="flex gap-4">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                `block py-2 pr-4 pl-3 duration-200 ${
-                  isActive ? "border-blue-600" : "border-b-transparent"
-                } text-sm py-1 border-b-2`
-              }
-            >
-              About
-            </NavLink>
-            <NavLink
-              to="/resume/"
-              className={({ isActive }) =>
-                `block py-2 pr-4 pl-3 duration-200 ${
-                  isActive ? "border-blue-600" : "border-b-transparent"
-                } text-sm py-1 border-b-2`
-              }
-            >
-              Resume
-            </NavLink>
-            <NavLink
-              to="/projects/"
-              className={({ isActive }) =>
-                `block py-2 pr-4 pl-3 duration-200 ${
-                  isActive ? "border-blue-600" : "border-b-transparent"
-                } text-sm py-1 border-b-2`
-              }
-            >
-              Projects
-            </NavLink>
-            <NavLink
-              to="/github/"
-              className={({ isActive }) =>
-                `block py-2 pr-4 pl-3 duration-200 ${
-                  isActive ? "border-blue-600" : "border-b-transparent"
-                } text-sm py-1 border-b-2`
-              }
-            >
-              Github
-            </NavLink>
+          <div className="flex items-center">
+            <button onClick={toggleMenu} className="sm:hidden mr-4">
+              <Menu size={24} />
+            </button>
+            <div className={`${isMenuOpen ? 'flex' : 'hidden'} sm:flex flex-col sm:flex-row gap-4 absolute sm:relative top-16 sm:top-0 left-0 sm:left-auto bg-base-100 sm:bg-transparent w-full sm:w-auto p-4 sm:p-0 shadow-md sm:shadow-none z-10`}>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `block py-2 pr-4 pl-3 duration-200 ${
+                    isActive ? "border-blue-600" : "border-b-transparent"
+                  } text-sm py-1 border-b-2`
+                }
+              >
+                About
+              </NavLink>
+              <NavLink
+                to="/resume/"
+                className={({ isActive }) =>
+                  `block py-2 pr-4 pl-3 duration-200 ${
+                    isActive ? "border-blue-600" : "border-b-transparent"
+                  } text-sm py-1 border-b-2`
+                }
+              >
+                Resume
+              </NavLink>
+              <NavLink
+                to="/projects/"
+                className={({ isActive }) =>
+                  `block py-2 pr-4 pl-3 duration-200 ${
+                    isActive ? "border-blue-600" : "border-b-transparent"
+                  } text-sm py-1 border-b-2`
+                }
+              >
+                Projects
+              </NavLink>
+              <NavLink
+                to="/github/"
+                className={({ isActive }) =>
+                  `block py-2 pr-4 pl-3 duration-200 ${
+                    isActive ? "border-blue-600" : "border-b-transparent"
+                  } text-sm py-1 border-b-2`
+                }
+              >
+                Github
+              </NavLink>
+            </div>
           </div>
           <label className="swap swap-rotate ml-4">
             <input
@@ -89,7 +100,7 @@ function Header() {
             </svg>
           </label>
         </div>
-        <div className="flex flex-col gap-6 print:mt-10 print:gap-2">
+        <div className="flex flex-col gap-6 mt-16 sm:mt-36 print:mt-10 print:gap-2">
           <h1 className="text-3xl md:text-6xl font-black">
             {data.firstName}{" "}
             <span className="font-extralight">{data.lastName}</span>
