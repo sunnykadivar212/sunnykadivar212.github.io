@@ -27,6 +27,10 @@ function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <div className="mb-24 mt-6 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto">
@@ -38,6 +42,7 @@ function Header() {
             <div className={`${isMenuOpen ? 'flex' : 'hidden'} sm:flex flex-col sm:flex-row gap-4 absolute sm:relative top-16 sm:top-0 left-0 sm:left-auto bg-base-100 sm:bg-transparent w-full sm:w-auto p-4 sm:p-0 shadow-md sm:shadow-none z-10`}>
               <NavLink
                 to="/"
+                onClick={closeMenu} 
                 className={({ isActive }) =>
                   `block py-2 pr-4 pl-3 duration-200 ${
                     isActive ? "border-blue-600" : "border-b-transparent"
@@ -48,6 +53,7 @@ function Header() {
               </NavLink>
               <NavLink
                 to="/resume/"
+                onClick={closeMenu} 
                 className={({ isActive }) =>
                   `block py-2 pr-4 pl-3 duration-200 ${
                     isActive ? "border-blue-600" : "border-b-transparent"
@@ -58,6 +64,7 @@ function Header() {
               </NavLink>
               <NavLink
                 to="/projects/"
+                onClick={closeMenu} 
                 className={({ isActive }) =>
                   `block py-2 pr-4 pl-3 duration-200 ${
                     isActive ? "border-blue-600" : "border-b-transparent"
@@ -68,6 +75,7 @@ function Header() {
               </NavLink>
               <NavLink
                 to="/certification/"
+                onClick={closeMenu} 
                 className={({ isActive }) =>
                   `block py-2 pr-4 pl-3 duration-200 ${
                     isActive ? "border-blue-600" : "border-b-transparent"
@@ -78,6 +86,7 @@ function Header() {
               </NavLink>
               <NavLink
                 to="/github/"
+                onClick={closeMenu} 
                 className={({ isActive }) =>
                   `block py-2 pr-4 pl-3 duration-200 ${
                     isActive ? "border-blue-600" : "border-b-transparent"
