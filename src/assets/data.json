@@ -50,6 +50,7 @@
     "knownTools": "Git, GitHub, Docker",
     "project1Name": "Stalk Talk",
     "project1Description": "A real-time chat application built using React.js, Express.js, Socket.IO, and other technologies.",
+    "project1ImageUrl": "This part needs to be fixed",
     "openSourceContributionSince": "Feb 2023",
     "openSourceContributionsTitle": "Open Source Contributor",
     "openSourceContributionDetails1": "Contributed to improving MDN Web Docs.",

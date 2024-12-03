@@ -115,25 +115,6 @@ function Github() {
           </div>
         </div>
       </div>
-
-      <div className="mt-8">
-        <h3 className="text-xl font-bold mb-2 text-center">Certifications:</h3>
-        <div className="flex justify-center space-x-4">
-          <a href="https://www.credly.com/badges/c203200e-ba86-49c2-801a-65b503dcb69d/public_url" target="_blank" rel="noopener noreferrer">
-            <img src="https://images.credly.com/size/340x340/images/73e4a58b-a8ef-41a3-a7db-9183dd269882/image.png" alt="Certification 1" width="150" height="150" />
-          </a>
-          <a href="https://ti-user-certificates.s3.amazonaws.com/ae62dcd7-abdc-4e90-a570-83eccba49043/5819416a-0b3c-4e22-8dfb-220ccdf644ac-ashish-vaghela-9cf8fc50-58af-4735-9058-32bfdd9097b3-certificate.pdf" target="_blank" rel="noopener noreferrer">
-            <img src="https://images.credly.com/images/6096167c-91fd-4e74-bc85-d2100672fef7/image.png" alt="Certification 2" width="150" height="150" />
-          </a>
-        </div>
-      </div>
-
-      <div className="text-center mt-8">
-        <img
-          src={`https://github-readme-activity-graph.vercel.app/graph?username=${githubUserName}&theme=react-dark&hide_border=true`}
-          alt="Ashish-CodeJourney's Contribution Chart"
-        />
-      </div>
     </div>
   );
 }
