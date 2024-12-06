@@ -56,6 +56,6 @@
     "openSourceContributionDetails1": "Contributed to improving MDN Web Docs.",
     "openSourceContributionsDetails2": "Enhanced documentation for open-source JavaScript libraries.",
     "openSourceContributionsDetails3": "Fixed bugs in React and Redux examples.",
-    "openSourceContributionsUrl": "https://github.com/Ashish-CodeJourney",
+    "openSourceContributionsUrl": "https://github.com/mdn/content/pulls?q=is%3Apr+is%3Amerged+author%3AAshish-CodeJourney",
     "openSourceContributionsUrlText": "View my open source contributions here"
 }
