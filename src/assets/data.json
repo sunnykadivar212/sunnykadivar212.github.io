@@ -51,6 +51,8 @@
     "project1Name": "Stalk Talk",
     "project1Description": "A real-time chat application built using React.js, Express.js, Socket.IO, and other technologies.",
     "project1ImageUrl": "This part needs to be fixed",
+    "project1LiveUrl": "https://stalk-talk.netlify.app/",
+    "project1GithubUrl": "https://github.com/Ashish-CodeJourney/Stalk-Talk",
     "openSourceContributionSince": "Feb 2023",
     "openSourceContributionsTitle": "Open Source Contributor",
     "openSourceContributionDetails1": "Contributed to improving MDN Web Docs.",
