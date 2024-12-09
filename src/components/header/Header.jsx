@@ -109,7 +109,7 @@ useEffect(() => {
           <h1 className="text-3xl md:text-6xl font-black">
             {data.firstName} <span className="font-extralight">{data.lastName}</span>
           </h1>
-          <h2 className="md:text-xl">{data.proffession}</h2>
+          <h2 className="md:text-xl">{data.profession}</h2>
         </div>
       </div>
     </div>
