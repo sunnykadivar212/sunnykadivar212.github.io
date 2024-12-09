@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom";
 import data from "../../assets/data.json";
-import { Sun, Moon, Monitor, Menu } from 'lucide-react';
+import { Sun, Moon, Laptop, Smartphone, Menu } from 'lucide-react'; // Import Laptop and Smartphone icons
 
 function Header() {
   const [theme, setTheme] = useState(() => {
@@ -11,6 +11,7 @@ function Header() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // Default to mobile if width is < 768px
 
   const applyTheme = (currentTheme) => {
     if (currentTheme === "device") {
@@ -41,6 +42,15 @@ useEffect(() => {
     };
   }, [theme]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const handleThemeChange = (selectedTheme) => {
     setTheme(selectedTheme);
     setIsDropdownOpen(false);
@@ -67,7 +77,8 @@ useEffect(() => {
   };
 
   return (
-    <div className="mb-24 mt-6 px-4 sm:px-6"><div className="max-w-4xl mx-auto">
+    <div className="mb-24 mt-6 px-4 sm:px-6">
+<div className="max-w-4xl mx-auto">
         <div className="flex items-center justify-between w-full print:hidden">
           <div className="flex items-center">
             <button onClick={toggleMenu} className="sm:hidden mr-4">
@@ -88,10 +99,10 @@ useEffect(() => {
               >
                 {theme === 'light' && <Sun size={24} />}
                 {theme === 'dark' && <Moon size={24} />}
-                {theme === 'device' && <Monitor size={24} />}
+                {theme === 'device' && (isMobile ? <Smartphone size={24} /> : <Laptop size={24} />)} {/* Conditionally display based on device type */}
               </button>
               {isDropdownOpen && (
-                  <div className={`absolute mt-1 shadow-lg rounded-md z-10 ${themeStyles(theme)}`}>
+                  <div className={`absolute mt-1 shadow-lg rounded-md z-10`}>
                     <button onClick={() => handleThemeChange('light')} className="flex items-center p-2 hover:bg-gray-300 w-full">
                       <Sun size={24} />
                     </button>
@@ -99,7 +110,7 @@ useEffect(() => {
             <Moon size={24} />
             </button>
              <button onClick={() => handleThemeChange('device')} className="flex items-center p-2 hover:bg-gray-300 w-full">
-                      <Monitor size={24} />
+                      {isMobile ? <Smartphone size={24} /> : <Laptop size={24} />} {/* Conditionally display based on device type */}
             </button>
               </div>
               )}
