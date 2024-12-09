@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import data from '../../assets/data.json';
+import {
+    Twitter, Linkedin, Instagram, Mail, Terminal, Code, Zap, Smile, Globe
+} from 'lucide-react';
 
 const githubUserName = data.githubUserName;
-const xUserName = data.XUserName;
 
 function Github() {
   const [data, setData] = useState(null);
@@ -36,8 +38,12 @@ function Github() {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-center text-3xl font-bold mb-4">Hi 👋, I'm Ashish</h1>
-      <h3 className="text-center text-xl mb-4">A Techie 🤓 Software developer from India 🇮🇳</h3>
+      <h1 className="text-center text-3xl font-bold mb-4">
+                <Smile size={24} className="inline-block mr-2" /> Hi, I'm Ashish
+</h1>
+      <h3 className="text-center text-xl mb-4">
+A Techie <Code size={24} className="inline-block" /> Software developer from India
+            </h3>
 
       <div className="flex items-center justify-center">
         <img
@@ -55,11 +61,10 @@ function Github() {
       </div>
 
       <div className="mt-4 text-left max-w-md mx-auto">
-        <p>💬 Ask me about <strong>Linux, React, Python and Java</strong></p>
-        <p>📫 Reach me at <strong>vaghelaashish111@gmail.com</strong></p>
-        <p>👨‍💻 All of my projects are available at <a href="https://ashishcodejourney.vercel.app" target="_blank" rel="noopener noreferrer">Ashish-CodeJourney</a></p>
-        <p>⚡ <strong>Chai is way better than Coffee | Change my mind!</strong></p>
-        <p>🌐 <a href="https://github.com/mdn/content/pulls?q=is%3Apr+is%3Amerged+author%3AAshish-CodeJourney" target="_blank" rel="noopener noreferrer">Some contributions in MDN web docs</a></p>
+        <p><Mail className="inline-block mr-2" /> Reach me at <strong>vaghelaashish111@gmail.com</strong></p>
+        <p><Code className="inline-block mr-2" /> All of my projects are available at <a href="https://ashishcodejourney.vercel.app" target="_blank" rel="noopener noreferrer">Ashish-CodeJourney</a></p>
+        <p><Zap className="inline-block mr-2" /> <strong>Chai is way better than Coffee | Change my mind!</strong></p>
+        <p><Globe className="inline-block mr-2" /> <a href="https://github.com/mdn/content/pulls?q=is%3Apr+is%3Amerged+author%3AAshish-CodeJourney" target="_blank" rel="noopener noreferrer">Some contributions in MDN web docs</a></p>
       </div>
 
       <div className="mt-4 flex justify-center">
@@ -67,25 +72,25 @@ function Github() {
       </div>
 
       <div className="text-center mt-4">
-        <p className="flex justify-center">
+        <div className="flex justify-center">
           <img
             src={`https://komarev.com/ghpvc/?username=${githubUserName}&label=Profile%20views&color=0e75b6&style=flat`}
             alt="Profile Views"
           />
-        </p>
+        </div>
       </div>
 
       <div className="text-center mt-4">
         <h3 className="text-xl font-bold mb-2">Connect with me:</h3>
         <div className="flex justify-center space-x-4">
           <a href="https://twitter.com/codejourney_" target="_blank" rel="noopener noreferrer">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/twitter.svg" alt="Twitter" height="30" width="40" />
+            <Twitter size={40} />
           </a>
           <a href="https://linkedin.com/in/ashish-codejourney" target="_blank" rel="noopener noreferrer">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg" alt="LinkedIn" height="30" width="40" />
+            <Linkedin size={40} />
           </a>
           <a href="https://instagram.com/heyyy_ashish" target="_blank" rel="noopener noreferrer">
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/instagram.svg" alt="Instagram" height="30" width="40" />
+            <Instagram size={40} />
           </a>
         </div>
       </div>
