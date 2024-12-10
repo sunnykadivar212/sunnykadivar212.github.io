@@ -53,11 +53,11 @@
     "project1ImageUrl": "This part needs to be fixed",
     "project1LiveUrl": "https://stalk-talk.netlify.app/",
     "project1GithubUrl": "https://github.com/Ashish-CodeJourney/Stalk-Talk",
-    "openSourceContributionSince": "Feb 2023",
+    "openSourceContributionSince": "Feb 2023 - Present",
     "openSourceContributionsTitle": "Open Source Contributor",
     "openSourceContributionDetails1": "Contributed to improving MDN Web Docs.",
-    "openSourceContributionsDetails2": "Enhanced documentation for open-source JavaScript libraries.",
-    "openSourceContributionsDetails3": "Fixed bugs in React and Redux examples.",
+    "openSourceContributionsDetails2": "Enhanced documentation for open-source libraries.",
+    "openSourceContributionsDetails3": "Fixed bugs in and examples in MDN code playground.",
     "openSourceContributionsUrl": "https://github.com/mdn/content/pulls?q=is%3Apr+is%3Amerged+author%3AAshish-CodeJourney",
     "openSourceContributionsUrlText": "View my open source contributions here"
 }
