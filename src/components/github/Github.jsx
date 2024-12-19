@@ -114,7 +114,7 @@ A Techie <Code size={24} className="inline-block" /> Software developer from Ind
           <div>
             <p className="text-center text-lg font-bold">GitHub Streak Stats</p>
             <img
-              src={`https://github-readme-streak-stats.herokuapp.com/?user=${githubUserName}&hide_border=true`}
+              src={`https://nirzak-streak-stats.vercel.app/?user=${githubUserName}`}
               alt={`${data.login}'s GitHub Streak Stats`}
             />
           </div>
