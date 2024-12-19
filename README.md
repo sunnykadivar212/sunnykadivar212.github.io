@@ -7,7 +7,7 @@ This is a simple React Application created using Vite.
 
 ## Demo
 
-See it online: https://ashishcodejourney.vercel.app/
+See it online: https://www.ashishcodejourney.xyz
 
 ## Features
 
