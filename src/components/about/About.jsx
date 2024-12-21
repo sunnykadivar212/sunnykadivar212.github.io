@@ -13,13 +13,13 @@ function About() {
             <span className="text-lg">
             Currently, I'm working on{" "}
               <a
-                  href={data.workingProjectSite || data.githubUrl}
+                  href={data.currentlyWorkingonURL || data.githubUrl}
                   target="_blank"
                   rel="noreferrer nofollow"
                   aria-label="Link to my personal projects"
                   className="text-blue-600 hover:underline"
               >
-              Personal Projects
+              {data.currentlyWorkingon}
             </a>
             .
           </span>
