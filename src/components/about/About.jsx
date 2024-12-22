@@ -11,7 +11,7 @@ function About() {
           </span>
             <br />
             <span className="text-lg">
-            Currently, I'm working on{" "}
+            Currently, I'm building{" "}
               <a
                   href={data.currentlyWorkingonURL || data.githubUrl}
                   target="_blank"
