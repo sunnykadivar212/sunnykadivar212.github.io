@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from "react-router-dom";
 import data from "../../assets/data.json";
-import { Sun, Moon, Laptop, Smartphone, Menu } from 'lucide-react'; // Import Laptop and Smartphone icons
+import { Sun, Moon, Laptop, Smartphone, Menu } from 'lucide-react';
 
-function Header() {
+function Header({ setView, currentView }) {
   const [theme, setTheme] = useState(() => {
     const storedTheme = localStorage.getItem("theme");
     return storedTheme ? storedTheme : "device";
@@ -11,7 +10,7 @@ function Header() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // Default to mobile if width is < 768px
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const applyTheme = (currentTheme) => {
     if (currentTheme === "device") {
@@ -27,9 +26,9 @@ function Header() {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-useEffect(() => {
-  const handleSystemThemeChange = (e) => {
-    if (theme === "device") {
+  useEffect(() => {
+    const handleSystemThemeChange = (e) => {
+      if (theme === "device") {
         applyTheme("device");
       }
     };
@@ -76,20 +75,22 @@ useEffect(() => {
     return 'bg-gray-200 text-black';
   };
 
+  const isActive = (view) => currentView === view ? 'border-b-2 border-blue-500' : '';
+
   return (
-    <div className="mb-24 mt-6 px-4 sm:px-6">
-<div className="max-w-4xl mx-auto">
-        <div className="flex items-center justify-between w-full print:hidden">
-          <div className="flex items-center">
-            <button onClick={toggleMenu} className="sm:hidden mr-4">
-              <Menu size={24} />
-            </button>
-            <div className={`${isMenuOpen ? 'flex' : 'hidden'} sm:flex flex-col sm:flex-row gap-4 absolute sm:relative top-16 sm:top-0 left-0 sm:left-auto bg-base-100 sm:bg-transparent w-full sm:w-auto p-4 sm:p-0 shadow-md sm:shadow-none z-10`}>
-              <NavLink to="/" onClick={closeMenu} className={({ isActive }) => `block py-2 pr-4 pl-3 duration-200 ${isActive ? "border-blue-600" : "border-b-transparent"} text-sm py-1 border-b-2`}>About</NavLink>
-              <NavLink to="/resume/" onClick={closeMenu} className={({ isActive }) => `block py-2 pr-4 pl-3 duration-200 ${isActive ? "border-blue-600" : "border-b-transparent"} text-sm py-1 border-b-2`}>Resume</NavLink>
-              <NavLink to="/projects/" onClick={closeMenu} className={({ isActive }) => `block py-2 pr-4 pl-3 duration-200 ${isActive ? "border-blue-600" : "border-b-transparent"} text-sm py-1 border-b-2`}>Projects</NavLink>
-              <NavLink to="/certification/" onClick={closeMenu} className={({ isActive }) => `block py-2 pr-4 pl-3 duration-200 ${isActive ? "border-blue-600" : "border-b-transparent"} text-sm py-1 border-b-2`}>Certificates</NavLink>
-              <NavLink to="/github/" onClick={closeMenu} className={({ isActive }) => `block py-2 pr-4 pl-3 duration-200 ${isActive ? "border-blue-600" : "border-b-transparent"} text-sm py-1 border-b-2`}>Github</NavLink>
+      <div className="mb-24 mt-6 px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center justify-between w-full print:hidden">
+            <div className="flex items-center">
+              <button onClick={toggleMenu} className="sm:hidden mr-4">
+                <Menu size={24} />
+              </button>
+              <div className={`${isMenuOpen ? 'flex' : 'hidden'} sm:flex flex-col sm:flex-row gap-4 absolute sm:relative top-16 sm:top-0 left-0 sm:left-auto bg-base-100 sm:bg-transparent w-full sm:w-auto p-4 sm:p-0 shadow-md sm:shadow-none z-10`}>
+                <button onClick={() => { setView('about'); closeMenu(); }} className={`block py-2 pr-4 pl-3 duration-200 text-sm py-1 ${isActive('about')}`}>About</button>
+                <button onClick={() => { setView('resume'); closeMenu(); }} className={`block py-2 pr-4 pl-3 duration-200 text-sm py-1 ${isActive('resume')}`}>Resume</button>
+                <button onClick={() => { setView('projects'); closeMenu(); }} className={`block py-2 pr-4 pl-3 duration-200 text-sm py-1 ${isActive('projects')}`}>Projects</button>
+                <button onClick={() => { setView('certification'); closeMenu(); }} className={`block py-2 pr-4 pl-3 duration-200 text-sm py-1 ${isActive('certification')}`}>Certificates</button>
+                <button onClick={() => { setView('github'); closeMenu(); }} className={`block py-2 pr-4 pl-3 duration-200 text-sm py-1 ${isActive('github')}`}>Github</button>
               </div>
             </div>
             <div className="theme-selector ml-4 relative">
@@ -99,31 +100,31 @@ useEffect(() => {
               >
                 {theme === 'light' && <Sun size={24} />}
                 {theme === 'dark' && <Moon size={24} />}
-                {theme === 'device' && (isMobile ? <Smartphone size={24} /> : <Laptop size={24} />)} {/* Conditionally display based on device type */}
+                {theme === 'device' && (isMobile ? <Smartphone size={24} /> : <Laptop size={24} />)}
               </button>
               {isDropdownOpen && (
                   <div className={`absolute mt-1 shadow-lg rounded-md z-10`}>
                     <button onClick={() => handleThemeChange('light')} className="flex items-center p-2 hover:bg-gray-300 w-full">
                       <Sun size={24} />
                     </button>
-              <button onClick={() => handleThemeChange('dark')} className="flex items-center p-2 hover:bg-gray-300 w-full">
-            <Moon size={24} />
-            </button>
-             <button onClick={() => handleThemeChange('device')} className="flex items-center p-2 hover:bg-gray-300 w-full">
-                      {isMobile ? <Smartphone size={24} /> : <Laptop size={24} />} {/* Conditionally display based on device type */}
-            </button>
-              </div>
+                    <button onClick={() => handleThemeChange('dark')} className="flex items-center p-2 hover:bg-gray-300 w-full">
+                      <Moon size={24} />
+                    </button>
+                    <button onClick={() => handleThemeChange('device')} className="flex items-center p-2 hover:bg-gray-300 w-full">
+                      {isMobile ? <Smartphone size={24} /> : <Laptop size={24} />}
+                    </button>
+                  </div>
               )}
+            </div>
+          </div>
+          <div className="flex flex-col gap-6 mt-16 sm:mt-36 print:mt-10 print:gap-2">
+            <h1 className="text-3xl md:text-6xl font-black">
+              {data.firstName} <span className="font-extralight">{data.lastName}</span>
+            </h1>
+            <h2 className="md:text-xl">{data.profession}</h2>
           </div>
         </div>
-        <div className="flex flex-col gap-6 mt-16 sm:mt-36 print:mt-10 print:gap-2">
-          <h1 className="text-3xl md:text-6xl font-black">
-            {data.firstName} <span className="font-extralight">{data.lastName}</span>
-          </h1>
-          <h2 className="md:text-xl">{data.profession}</h2>
-        </div>
       </div>
-    </div>
   );
 }
 
