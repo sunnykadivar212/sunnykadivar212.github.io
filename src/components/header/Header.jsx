@@ -77,6 +77,14 @@ function Header({ setView, currentView }) {
 
   const isActive = (view) => currentView === view ? 'border-b-2 border-blue-500' : '';
 
+  const handleViewChange = (view) => {
+    setView(view);
+    if (window.location.pathname !== '/') {
+      window.history.pushState({}, '', '/');
+    }
+    closeMenu();
+  };
+
   return (
       <div className="mb-24 mt-6 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
@@ -86,11 +94,11 @@ function Header({ setView, currentView }) {
                 <Menu size={24} />
               </button>
               <div className={`${isMenuOpen ? 'flex' : 'hidden'} sm:flex flex-col sm:flex-row gap-4 absolute sm:relative top-16 sm:top-0 left-0 sm:left-auto bg-base-100 sm:bg-transparent w-full sm:w-auto p-4 sm:p-0 shadow-md sm:shadow-none z-10`}>
-                <button onClick={() => { setView('about'); closeMenu(); }} className={`block py-2 pr-4 pl-3 duration-200 text-sm py-1 ${isActive('about')}`}>About</button>
-                <button onClick={() => { setView('resume'); closeMenu(); }} className={`block py-2 pr-4 pl-3 duration-200 text-sm py-1 ${isActive('resume')}`}>Resume</button>
-                <button onClick={() => { setView('projects'); closeMenu(); }} className={`block py-2 pr-4 pl-3 duration-200 text-sm py-1 ${isActive('projects')}`}>Projects</button>
-                <button onClick={() => { setView('certification'); closeMenu(); }} className={`block py-2 pr-4 pl-3 duration-200 text-sm py-1 ${isActive('certification')}`}>Certificates</button>
-                <button onClick={() => { setView('github'); closeMenu(); }} className={`block py-2 pr-4 pl-3 duration-200 text-sm py-1 ${isActive('github')}`}>Github</button>
+                <button onClick={() => handleViewChange('about')} className={`block py-2 pr-4 pl-3 duration-200 text-sm py-1 ${isActive('about')}`}>About</button>
+                <button onClick={() => handleViewChange('resume')} className={`block py-2 pr-4 pl-3 duration-200 text-sm py-1 ${isActive('resume')}`}>Resume</button>
+                <button onClick={() => handleViewChange('projects')} className={`block py-2 pr-4 pl-3 duration-200 text-sm py-1 ${isActive('projects')}`}>Projects</button>
+                <button onClick={() => handleViewChange('certification')} className={`block py-2 pr-4 pl-3 duration-200 text-sm py-1 ${isActive('certification')}`}>Certificates</button>
+                <button onClick={() => handleViewChange('github')} className={`block py-2 pr-4 pl-3 duration-200 text-sm py-1 ${isActive('github')}`}>Github</button>
               </div>
             </div>
             <div className="theme-selector ml-4 relative">
