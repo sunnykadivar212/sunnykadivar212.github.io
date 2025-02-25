@@ -1,3 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* index.css */
+html {
+    height: 100%;
+    background: linear-gradient(90deg, #e0e0e0 1px, transparent 1px),
+    linear-gradient(180deg, #e0e0e0 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: moveGrid 10s linear infinite;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+}
+
+html[data-theme='dark'] {
+    background: linear-gradient(90deg, #333 1px, transparent 1px),
+    linear-gradient(180deg, #333 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: #e0e0e0;
+    animation: moveGridDark 10s linear infinite;
+}
+
+@keyframes moveGrid {
+    0% {
+        background-position: 0 0, 0 0;
+    }
+    50% {
+        background-position: 20px 20px, 20px 20px;
+    }
+    100% {
+        background-position: 0 0, 0 0;
+    }
+}
+
+@keyframes moveGridDark {
+    0% {
+        background-position: 0 0, 0 0;
+    }
+    50% {
+        background-position: 20px 20px, 20px 20px;
+    }
+    100% {
+        background-position: 0 0, 0 0;
+    }
+}
