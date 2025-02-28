@@ -2,6 +2,24 @@ import React, { useState, useEffect } from 'react';
 import data from "../../assets/data.json";
 import { Sun, Moon, Laptop, Smartphone, Menu } from 'lucide-react';
 
+function ThemeIcon({ theme, isMobile }) {
+  if (theme === 'light') return <Sun size={24} />;
+  if (theme === 'dark') return <Moon size={24} />;
+  return isMobile ? <Smartphone size={24} /> : <Laptop size={24} />;
+}
+
+function NavButton({ onClick, active, children }) {
+  const activeClass = active ? 'border-b-2 border-blue-500' : '';
+  return (
+      <button
+          onClick={onClick}
+          className={`block py-2 pr-4 pl-3 duration-200 text-sm py-1 ${activeClass}`}
+      >
+        {children}
+      </button>
+  );
+}
+
 function Header({ setView, currentView }) {
   const [theme, setTheme] = useState(() => {
     const storedTheme = localStorage.getItem("theme");
@@ -27,7 +45,7 @@ function Header({ setView, currentView }) {
   }, [theme]);
 
   useEffect(() => {
-    const handleSystemThemeChange = (e) => {
+    const handleSystemThemeChange = () => {
       if (theme === "device") {
         applyTheme("device");
       }
@@ -75,8 +93,6 @@ function Header({ setView, currentView }) {
     return 'bg-gray-200 text-black';
   };
 
-  const isActive = (view) => currentView === view ? 'border-b-2 border-blue-500' : '';
-
   const handleViewChange = (view) => {
     setView(view);
     if (window.location.pathname !== '/') {
@@ -84,6 +100,15 @@ function Header({ setView, currentView }) {
     }
     closeMenu();
   };
+
+  // Navigation items to avoid duplication
+  const navItems = [
+    { name: 'about', label: 'About' },
+    { name: 'resume', label: 'Resume' },
+    { name: 'projects', label: 'Projects' },
+    { name: 'certification', label: 'Certificates' },
+    { name: 'github', label: 'Github' }
+  ];
 
   return (
       <div className="mb-24 mt-6 px-4 sm:px-6">
@@ -94,11 +119,15 @@ function Header({ setView, currentView }) {
                 <Menu size={24} />
               </button>
               <div className={`${isMenuOpen ? 'flex' : 'hidden'} sm:flex flex-col sm:flex-row gap-4 absolute sm:relative top-16 sm:top-0 left-0 sm:left-auto bg-base-100 sm:bg-transparent w-full sm:w-auto p-4 sm:p-0 shadow-md sm:shadow-none z-10`}>
-                <button onClick={() => handleViewChange('about')} className={`block py-2 pr-4 pl-3 duration-200 text-sm py-1 ${isActive('about')}`}>About</button>
-                <button onClick={() => handleViewChange('resume')} className={`block py-2 pr-4 pl-3 duration-200 text-sm py-1 ${isActive('resume')}`}>Resume</button>
-                <button onClick={() => handleViewChange('projects')} className={`block py-2 pr-4 pl-3 duration-200 text-sm py-1 ${isActive('projects')}`}>Projects</button>
-                <button onClick={() => handleViewChange('certification')} className={`block py-2 pr-4 pl-3 duration-200 text-sm py-1 ${isActive('certification')}`}>Certificates</button>
-                <button onClick={() => handleViewChange('github')} className={`block py-2 pr-4 pl-3 duration-200 text-sm py-1 ${isActive('github')}`}>Github</button>
+                {navItems.map(item => (
+                    <NavButton
+                        key={item.name}
+                        onClick={() => handleViewChange(item.name)}
+                        active={currentView === item.name}
+                    >
+                      {item.label}
+                    </NavButton>
+                ))}
               </div>
             </div>
             <div className="theme-selector ml-4 relative">
@@ -106,12 +135,10 @@ function Header({ setView, currentView }) {
                   className={`flex items-center p-2 rounded-md ${themeStyles(theme)}`}
                   onClick={toggleDropdown}
               >
-                {theme === 'light' && <Sun size={24} />}
-                {theme === 'dark' && <Moon size={24} />}
-                {theme === 'device' && (isMobile ? <Smartphone size={24} /> : <Laptop size={24} />)}
+                <ThemeIcon theme={theme} isMobile={isMobile} />
               </button>
               {isDropdownOpen && (
-                  <div className={`absolute mt-1 shadow-lg rounded-md z-10`}>
+                  <div className="absolute mt-1 shadow-lg rounded-md z-10">
                     <button onClick={() => handleThemeChange('light')} className="flex items-center p-2 hover:bg-gray-300 w-full">
                       <Sun size={24} />
                     </button>

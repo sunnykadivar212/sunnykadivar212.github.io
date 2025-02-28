@@ -57,6 +57,34 @@ function JobDetails({ startDate, endDate, position, company, companySite, locati
     );
 }
 
+function ContactItem({ icon: Icon, children }) {
+    return (
+        <li>
+            <Icon className="inline mr-2 text-500" size={16} />
+            {children}
+        </li>
+    );
+}
+
+function ContactLink({ href, children }) {
+    return <a href={href} className="text-blue-500">{children}</a>;
+}
+
+function EducationItem({ time, degree, university, location }) {
+    return (
+        <div className="grid items-baseline gap-x-10 lg:grid-cols-4">
+            <div className="lg:text-right">
+                <span>{time}</span>
+            </div>
+            <div className="lg:col-span-3">
+                <h3 className="inline font-bold">{degree}</h3>{" "}
+                <span>at {university}</span>
+                <p>{location}</p>
+            </div>
+        </div>
+    );
+}
+
 function Resume() {
     return (
         <main className="mb-24 mt-6 flex flex-col items-center justify-center px-6">
@@ -110,20 +138,18 @@ function Resume() {
 
                 {/* Education */}
                 <Section title="Education" icon={GraduationCap}>
-                    {[data.mastersCollegeTime, data.bachelorsCollegeTime].map((time, index) => (
-                        <div key={index} className="grid items-baseline gap-x-10 lg:grid-cols-4">
-                            <div className="lg:text-right">
-                                <span>{time}</span>
-                            </div>
-                            <div className="lg:col-span-3">
-                                <h3 className="inline font-bold">{index === 0 ? data.mastersDegree : data.bachelorsDegree}</h3>{" "}
-                                <span>
-                  at {index === 0 ? data.mastersUniversity : data.bachelorsUniversity}
-                </span>
-                                <p>{index === 0 ? data.mastersUniversityLocation : data.bachelorsUniversityLocation}</p>
-                            </div>
-                        </div>
-                    ))}
+                    <EducationItem
+                        time={data.mastersCollegeTime}
+                        degree={data.mastersDegree}
+                        university={data.mastersUniversity}
+                        location={data.mastersUniversityLocation}
+                    />
+                    <EducationItem
+                        time={data.bachelorsCollegeTime}
+                        degree={data.bachelorsDegree}
+                        university={data.bachelorsUniversity}
+                        location={data.bachelorsUniversityLocation}
+                    />
                 </Section>
 
                 {/* Skills and Tech Stack */}
@@ -139,34 +165,27 @@ function Resume() {
                 {/* Contact Info */}
                 <Section title="Contact Info" icon={Send}>
                     <ul className="mx-5 my-2 list-disc">
-                        <li>
-                            <Mail className="inline mr-2 text-500" size={16} />
-                            <a href={data.mailto} className="text-blue-500">{data.email}</a>
-                        </li>
-                        <li>
-                            <Linkedin className="inline mr-2 text-500" size={16} />
-                            <a href={data.linkedinUrl} className="text-blue-500">@{data.linkedinUserName}</a>
-                        </li>
-                        <li>
-                            <Github className="inline mr-2 text-500" size={16} />
-                            <a href={data.githubUrl} className="text-blue-500">@{data.githubUserName}</a>
-                        </li>
-                        <li>
-                            <Twitter className="inline mr-2 text-500" size={16} />
-                            <a href={data.XUrl} className="text-blue-500">@{data.XUserName}</a>
-                        </li>
-                        <li>
-                            <Code className="inline mr-2 text-500" size={16} />
-                            <a href={data.devToUrl} className="text-blue-500">@{data.devToUserName}</a>
-                        </li>
-                        <li>
-                            <Send className="inline mr-2 text-500" size={16} />
-                            <a href={data.telegramUrl} className="text-blue-500">@{data.telegramUserName}</a>
-                        </li>
-                        <li>
-                            <MapPin className="inline mr-2 text-500" size={16} />
+                        <ContactItem icon={Mail}>
+                            <ContactLink href={data.mailto}>{data.email}</ContactLink>
+                        </ContactItem>
+                        <ContactItem icon={Linkedin}>
+                            <ContactLink href={data.linkedinUrl}>@{data.linkedinUserName}</ContactLink>
+                        </ContactItem>
+                        <ContactItem icon={Github}>
+                            <ContactLink href={data.githubUrl}>@{data.githubUserName}</ContactLink>
+                        </ContactItem>
+                        <ContactItem icon={Twitter}>
+                            <ContactLink href={data.XUrl}>@{data.XUserName}</ContactLink>
+                        </ContactItem>
+                        <ContactItem icon={Code}>
+                            <ContactLink href={data.devToUrl}>@{data.devToUserName}</ContactLink>
+                        </ContactItem>
+                        <ContactItem icon={Send}>
+                            <ContactLink href={data.telegramUrl}>@{data.telegramUserName}</ContactLink>
+                        </ContactItem>
+                        <ContactItem icon={MapPin}>
                             {data.city} (open to relocation)
-                        </li>
+                        </ContactItem>
                     </ul>
                 </Section>
             </div>

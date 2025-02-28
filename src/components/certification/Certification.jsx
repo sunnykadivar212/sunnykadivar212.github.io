@@ -21,29 +21,34 @@ const certifications = [
   },
 ];
 
+function CertificationCard({ cert }) {
+  return (
+      <a
+          href={cert.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-col items-center gap-4 hover:scale-105 transition-transform duration-300"
+      >
+        <img
+            src={cert.image}
+            alt={cert.name}
+            width="150"
+            height="150"
+            className="border-2 border-gray-400 rounded-lg shadow-md"
+            style={{ objectFit: 'contain' }}
+        />
+        <span className="text-lg font-medium text-center">{cert.name}</span>
+      </a>
+  );
+}
+
 function Certifications() {
   return (
       <div className="mt-8 px-6">
         <h3 className="text-xl font-bold mb-6 text-center">Certifications</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
           {certifications.map((cert, index) => (
-              <a
-                  key={index}
-                  href={cert.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center gap-4 hover:scale-105 transition-transform duration-300"
-              >
-                <img
-                    src={cert.image}
-                    alt={cert.name}
-                    width="150"
-                    height="150"
-                    className="border-2 border-gray-400 rounded-lg shadow-md"
-                    style={{ objectFit: 'contain' }}
-                />
-                <span className="text-lg font-medium text-center">{cert.name}</span>
-              </a>
+              <CertificationCard key={index} cert={cert} />
           ))}
         </div>
       </div>
