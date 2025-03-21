@@ -1,13 +1,11 @@
-# Ashish-CodeJourney's website
-
-[![CodeQL](https://github.com/Ashish-CodeJourney/Ashish-CodeJourney.github.io/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/Ashish-CodeJourney/Ashish-CodeJourney.github.io/actions/workflows/github-code-scanning/codeql)
-![Vercel Deploy](https://deploy-badge.vercel.app/vercel/ashishcodejourney)
+# sunnykadivar212's website
+![Vercel Deploy](https://deploy-badge.vercel.app/vercel/sunnykadivar212)
 
 This is a simple React Application created using Vite.
 
 ## Demo
 
-See it online: https://www.ashishcodejourney.xyz
+See it online: https://sunnykadivar212.vercel.app/
 
 ## Features
 
